@@ -1,0 +1,34 @@
+{% set version = "0.1.9.0" %}
+
+package:
+  name: dante_ltr
+  version: {{ version }}
+
+source:
+  url: https://github.com/kavonrtep/dante_ltr/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 33c3eaa8688a825ee8776c00e69cdf35b9f2ea68e23bbadf658a7f3250a6b6dc
+requirements:
+  run:
+    - r-optparse
+    - blast
+    - bioconductor-biostrings
+    - bioconductor-bsgenome
+    - bioconductor-rtracklayer
+    - r-dplyr=1.0.7
+    - python>=3.6.0
+    - tidehunter=1.4.3
+    - bedtools
+test:
+  commands:
+    - dante_ltr --help
+
+about:
+  dev_url: https://github.com/kavonrtep/dante_ltr
+  license: GNU GPL v3
+  license_file: LICENSE
+  summary: DANTE_LTR is a program for finding full-length LTR retrotranspsons using Domain based ANnotation of Transposable elements
+
+extra:
+  copy_test_source_files: true
+  final: true
+
