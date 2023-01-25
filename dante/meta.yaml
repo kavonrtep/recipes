@@ -1,4 +1,4 @@
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 
 package:
   name: dante
@@ -6,13 +6,14 @@ package:
 
 source:
   url: https://github.com/kavonrtep/dante/archive/refs/tags/{{ version }}.tar.gz
-  sha256: da54f2724165b6d6c8680d4eadb85963b1f2634580c2fc62db2219d4d095d229
+  sha256 : 77a8daa8d6200eb155578f7328c1acc7125a507d74a6f0ab31ba1b3240953865
 requirements:
   run:
     - last>=744
     - numpy
     - python>=3.6.0
     - biopython
+    - r-base
 test:
   commands:
     - dante --help
@@ -21,7 +22,7 @@ about:
   dev_url: https://github.com/kavonrtep/dante
   license: GNU GPL v3
   license_file: LICENCE
-  summary: DANTE is a program for identification of transposamble elements protein coding sequences using REXdb database
+  summary: DANTE is a program for identification of transposable elements protein coding sequences using REXdb database
 
 extra:
   copy_test_source_files: true
