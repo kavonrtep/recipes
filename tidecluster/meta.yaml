@@ -1,0 +1,40 @@
+{% set version = "0.0.1" %}
+
+package:
+  name: tidecluster
+  version: {{ version }}
+
+source:
+  url: https://github.com/kavonrtep/TideCluster/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 317919b303ebe7e17f990a13833bd50ea46c9559eb989a0d95819d74c3290256
+requirements:
+  run:
+    - TideHunter=1.4.3
+    - blast
+    - mmseqs2
+    - python>=3.6
+    - networkx
+    - repeatmasker
+    - r-optparse
+    - r-igraph
+    - bioconductor-biostrings
+    - r-scales
+    - r-stringr
+    - r-hwriter
+    - r-r2html
+    - r-plyr
+    - r-dplyr
+    - mafft
+test:
+  commands:
+    - TideCluster.py --help
+
+about:
+  dev_url: https://github.com/kavonrtep/TideCluster
+  license: GNU GPL v3
+  license_file: LICENSE
+  summary: TideCluster is wrapper for Tidehunter and is intended for identifying tandem repeats in genome assemblies
+
+extra:
+  copy_test_source_files: true
+  final: true
