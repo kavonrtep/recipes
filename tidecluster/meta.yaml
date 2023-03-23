@@ -1,4 +1,4 @@
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
   name: tidecluster
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/TideCluster/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 317919b303ebe7e17f990a13833bd50ea46c9559eb989a0d95819d74c3290256
+  sha256: c307ca51eba357e8158cd5e807cd777c5904d4552d436989d9e8335abd75fdf4
 requirements:
   run:
     - TideHunter=1.4.3
