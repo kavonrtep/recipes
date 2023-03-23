@@ -4,6 +4,7 @@ tasks:
   - name: Script Task
     init: |
       echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
+      mamba install -y  boa
 
     command: echo 'start script'
 
