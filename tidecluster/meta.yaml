@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/TideCluster/archive/refs/tags/{{ version }}.tar.gz
-  sha256: https://github.com/kavonrtep/TideCluster/archive/refs/tags/0.0.3.tar.gz
+  sha256: 3a603dd8bb51979f79e9fcc4fe1b1fc3ef97d7b3f4bd983a7a244beda4ba481a
 requirements:
   run:
     - TideHunter=1.4.3
