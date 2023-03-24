@@ -1,4 +1,4 @@
-{% set version = "0.2.2.0" %}
+{% set version = "0.2.2.2" %}
 
 package:
   name: dante_ltr
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/dante_ltr/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 87c253635955d178989bbfaa608d14a14d6256411b0da7a1e6378dab268ff08b
+  sha256: 39323d9918969982024bf09a249151dcc763913b878c6039de1a88cc8f2b4ec3
 requirements:
   run:
     - r-optparse
@@ -17,7 +17,7 @@ requirements:
     - r-dplyr=1.0.7
     - python>=3.6.0
     - tidehunter=1.4.3
-    - bedtools
+    - bedtools>=2.23.0
 test:
   commands:
     - dante_ltr --help
