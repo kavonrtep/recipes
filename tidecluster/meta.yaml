@@ -1,4 +1,4 @@
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: tidecluster
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/TideCluster/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 3a603dd8bb51979f79e9fcc4fe1b1fc3ef97d7b3f4bd983a7a244beda4ba481a
+  sha256: 67b7f2b3010b7469800084a816722522d73980eb49b2b7ea572c01ccb3e7d53d
 requirements:
   run:
     - TideHunter=1.4.3
@@ -19,7 +19,6 @@ requirements:
     - r-igraph
     - bioconductor-biostrings
     - r-scales
-    - r-stringr
     - r-hwriter
     - r-r2html
     - r-plyr
