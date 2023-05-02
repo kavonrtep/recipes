@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/TideCluster/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 0713a2526311e2d08f709e5ee393d0d8e5407dbbf814035c0a10ac8a361dfaef
+  sha256: 00b4b9e8a36f4f735135c20ac9d3c1737cf7e3c80c9fb55e75e27f4ea1f9c046
 requirements:
   run:
     - TideHunter=1.4.3
@@ -30,7 +30,7 @@ test:
 
 about:
   dev_url: https://github.com/kavonrtep/TideCluster
-  license: GNU GPL v3
+  license: GPL-3.0-only
   license_file: LICENSE
   summary: TideCluster is wrapper for Tidehunter and is intended for identifying tandem repeats in genome assemblies
 

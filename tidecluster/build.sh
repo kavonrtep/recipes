@@ -12,5 +12,5 @@ cp -r * ${TIDECLUSTER}
 
 # link executables
 ln -s ${TIDECLUSTER}/TideCluster.py ${PREFIX}/bin/TideCluster.py
-
+ln -s ${TIDECLUSTER}/update_gff3.py ${PREFIX}/bin/update_gff3.py
 
