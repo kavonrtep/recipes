@@ -14,4 +14,5 @@ cp -r * ${DANTE_LTR_DIR}
 ln -s ${DANTE_LTR_DIR}/detect_putative_ltr.R ${PREFIX}/bin/detect_putative_ltr.R
 ln -s ${DANTE_LTR_DIR}/detect_putative_ltr_wrapper.py ${PREFIX}/bin/dante_ltr
 ln -s ${DANTE_LTR_DIR}/clean_ltr.R ${PREFIX}/bin/clean_ltr.R
+ln -s ${DANTE_LTR_DIR}/dante_ltr_summary.R ${PREFIX}/bin/dante_ltr_summary.R
 
