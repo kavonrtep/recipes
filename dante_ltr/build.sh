@@ -11,8 +11,9 @@ mkdir -p ${DANTE_LTR_DIR}
 cp -r * ${DANTE_LTR_DIR}
 
 # link executables
-ln -s ${DANTE_LTR_DIR}/detect_putative_ltr.R ${PREFIX}/bin/detect_putative_ltr.R
-ln -s ${DANTE_LTR_DIR}/detect_putative_ltr_wrapper.py ${PREFIX}/bin/dante_ltr
+# ln -s ${DANTE_LTR_DIR}/detect_putative_ltr.R ${PREFIX}/bin/detect_putative_ltr.R
+ln -s ${DANTE_LTR_DIR}/dante_ltr ${PREFIX}/bin/dante_ltr
 ln -s ${DANTE_LTR_DIR}/clean_ltr.R ${PREFIX}/bin/clean_ltr.R
-ln -s ${DANTE_LTR_DIR}/dante_ltr_summary.R ${PREFIX}/bin/dante_ltr_summary.R
+ln -s ${DANTE_LTR_DIR}/dante_ltr_summary ${PREFIX}/bin/dante_ltr_summary
+ln -s ${DANTE_LTR_DIR}/dante_ltr_to_library ${PREFIX}/bin/dante_ltr_to_library
 
