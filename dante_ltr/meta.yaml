@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/dante_ltr/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 03673827e066be3ed01410d4bf6153abf8e7db3501279a7231b498a4776efee3
+  sha256: 5c53c7be90eed357b3a5065201e2b9bcb9a8f1341e31bd62a9c3a9418763e85b
 requirements:
   run:
     - r-optparse
