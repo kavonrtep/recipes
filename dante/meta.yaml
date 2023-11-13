@@ -1,4 +1,4 @@
-{% set version = "0.1.8" %}
+{% set version = "0.1.9" %}
 
 package:
   name: dante
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/dante/archive/refs/tags/{{ version }}.tar.gz
-  sha256 : c0072fe7f68c511ca5a1c9c8b576a9b3984d016cc4f830f08ad84db2c0d01343
+  sha256 : 0d540fd3a68fe9707ef81b5f27e00c41e284a9b93c4e8167bee5e3aab6120546
 requirements:
   run:
     - last>=744
