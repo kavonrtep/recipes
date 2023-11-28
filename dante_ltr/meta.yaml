@@ -1,4 +1,4 @@
-{% set version = "0.3.4.0" %}
+{% set version = "0.3.5.0" %}
 
 package:
   name: dante_ltr
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/dante_ltr/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 7e29b715191080a64ba481617f3e6919fd7974193db00c5bc25d074104879ea5
+  sha256: 3e1014a21cec4463f965d280d006f7b11858d85e1162d5fac8425a6935d1d76f
 requirements:
   run:
     - r-optparse
