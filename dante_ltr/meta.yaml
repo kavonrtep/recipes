@@ -16,7 +16,7 @@ requirements:
     - bioconductor-rtracklayer
     - r-dplyr=1.0.7
     - python>=3.6.0
-    - tidehunter=1.4.3<
+    - tidehunter=1.4.3
     - bedtools>=2.23.0
     - mmseqs2>=14
 test:
