@@ -1,4 +1,4 @@
-{% set version = "0.1.9" %}
+{% set version = "0.2.0" %}
 
 package:
   name: dante
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://github.com/kavonrtep/dante/archive/refs/tags/{{ version }}.tar.gz
-  sha256 : 0d540fd3a68fe9707ef81b5f27e00c41e284a9b93c4e8167bee5e3aab6120546
+  sha256 : b6fa290542a194c1756b36cf32fdfbbf9aa12a3db44d5cc6e2cdb82b772a188a
 requirements:
   run:
-    - last>=744
-    - numpy
-    - python>=3.6.0
-    - biopython
-    - r-base
+    - last=1453
+    - numpy=1.24.2
+    - python>=3.11.0
+    - biopython=1.81
+    - r-base=4.2.3
 test:
   commands:
     - dante --help
