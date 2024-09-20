@@ -13,7 +13,7 @@ requirements:
     - numpy=1.24.2
     - python>=3.11.0
     - biopython=1.81
-    - r-base=4.2.3
+    - r-base=4.1.3
 test:
   commands:
     - dante --help
