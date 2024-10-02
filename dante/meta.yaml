@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/kavonrtep/dante/archive/refs/tags/{{ version }}.tar.gz
-  sha256 : f2bd34c79f02c10e3d903ad72a2fe0977a93afab0c30b015ccbfc4b04b432d89
+  sha256 : e92ad611feaca2f47a877732f6414590571bb5d41eea009271679db602e26679
 requirements:
   run:
     - last=1453
     - numpy=1.24.2
-    - python>=3.11.0
+    - python=3.11.0
     - biopython=1.81
     - r-base=4.1.3
 test:
