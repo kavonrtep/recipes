@@ -1,4 +1,4 @@
-{% set version = "0.1.6" %}
+{% set version = "0.1.7" %}
 
 package:
   name: dante_tir
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/dante_tir/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 296d0489c8c0d73687821c3642d0181dc3b6657a107f717821315ad5dfb6fda3
+  sha256: 49f957a5dccc02535660a08baa8e5e4f14c6f97fc26d4666d5144420eac4d987
 requirements:
   run:
     - r-optparse
