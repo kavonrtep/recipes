@@ -13,6 +13,7 @@ cp -r * ${DANTE_TIR_DIR}
 # link executables
 # ln -s ${DANTE_TIR_DIR}/detect_putative_ltr.R ${PREFIX}/bin/detect_putative_ltr.R
 ln -s ${DANTE_TIR_DIR}/dante_tir.py ${PREFIX}/bin/dante_tir.py
+ln -s ${DANTE_TIR_DIR}/dante_tir_summary.R ${PREFIX}/bin/dante_tir_summary.R
 
 
 
