@@ -1,4 +1,4 @@
-{% set version = "1.6.1" %}
+{% set version = "1.6.2" %}
 
 package:
   name: tidecluster
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/TideCluster/archive/refs/tags/{{ version }}.tar.gz
-  sha256: b17151f340c93837438642e290e70ad6e1a89bec5069d1fdd6310321d0edb456
+  sha256: cbc7bef309d017d8f3beb6b086397ffb86ef621d1b5339326a3e172d1e0aebb4
 requirements:
   run:
     - TideHunter=1.4.3
@@ -18,6 +18,7 @@ requirements:
     - r-optparse
     - r-igraph
     - bioconductor-biostrings
+    - bioconductor-genomeinfodb
     - r-scales
     - r-hwriter
     - r-r2html
