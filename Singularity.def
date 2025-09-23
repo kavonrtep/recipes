@@ -1,0 +1,78 @@
+Bootstrap: docker
+From: condaforge/mambaforge:latest
+
+%labels
+    Author petr
+    Version 1.0
+    Description Clean conda/mamba environment for building conda packages
+
+%environment
+    export PATH=/opt/conda/bin:$PATH
+    export CONDA_PREFIX=/opt/conda
+    export MAMBA_EXE=/opt/conda/bin/mamba
+    export CONDA_EXE=/opt/conda/bin/conda
+    
+    # Set writable directories for conda operations (use workspace bind mount)
+    export CONDA_PKGS_DIRS=/workspace/conda-pkgs
+    export CONDA_BLD_PATH=/workspace/conda-bld
+    export CONDA_ENVS_PATH=/workspace/conda-envs
+    export MAMBA_ROOT_PREFIX=/workspace/mamba
+
+%post
+    # Update conda and mamba
+    /opt/conda/bin/conda update -n base -c defaults conda -y
+    /opt/conda/bin/conda update -n base -c defaults mamba -y
+    
+    # Install conda-build and boa (for conda mambabuild)
+    /opt/conda/bin/mamba install -y -c conda-forge conda-build boa anaconda-client
+    
+    # Configure conda channels with proper priority order
+    /opt/conda/bin/conda config --add channels conda-forge
+    /opt/conda/bin/conda config --add channels bioconda
+    /opt/conda/bin/conda config --add channels r
+    /opt/conda/bin/conda config --set channel_priority strict
+    
+    # Clean conda cache to reduce image size
+    /opt/conda/bin/conda clean -afy
+
+%runscript
+    # Create writable directories at runtime if they don't exist
+    mkdir -p /workspace/conda-pkgs /workspace/conda-bld /workspace/conda-envs /workspace/mamba
+    
+    echo "Conda/Mamba build environment ready"
+    echo "Available commands:"
+    echo "  conda mambabuild -c conda-forge -c bioconda -c r <recipe_dir>"
+    echo "  ./make_and_upload_package.sh <recipe_dir>"
+    echo ""
+    echo "Writable directories configured:"
+    echo "  CONDA_PKGS_DIRS=/workspace/conda-pkgs"
+    echo "  CONDA_BLD_PATH=/workspace/conda-bld"
+    echo ""
+    echo "Current working directory: $(pwd)"
+    exec /bin/bash "$@"
+
+%help
+    This Singularity container provides a clean conda/mamba environment for building conda packages.
+    
+    Usage:
+        # Build the container
+        singularity build conda-builder.sif Singularity.def
+        
+        # Run interactively (bind both recipes and a writable workspace)
+        singularity shell --bind /mnt/ceph/users/petr/workspace/recipes:/workspace conda-builder.sif
+        
+        # Run make_and_upload_package.sh on a specific directory
+        singularity exec --bind /mnt/ceph/users/petr/workspace/recipes:/workspace conda-builder.sif /workspace/make_and_upload_package.sh dante
+        
+        # Build specific package
+        singularity exec --bind /mnt/ceph/users/petr/workspace/recipes:/workspace conda-builder.sif conda mambabuild -c conda-forge -c bioconda -c r /workspace/dante
+        
+        # Alternative: create separate build directory
+        mkdir -p ~/conda-build-workspace
+        singularity exec --bind /mnt/ceph/users/petr/workspace/recipes:/recipes --bind ~/conda-build-workspace:/workspace conda-builder.sif conda mambabuild -c conda-forge -c bioconda -c r /recipes/dante
+    
+    The container includes:
+    - Latest mambaforge base
+    - conda-build and boa packages
+    - anaconda-client for uploading
+    - Proper channel configuration (conda-forge, bioconda)
