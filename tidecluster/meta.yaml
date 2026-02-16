@@ -1,4 +1,4 @@
-{% set version = "1.6.2" %}
+{% set version = "1.8.0" %}
 
 package:
   name: tidecluster
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/kavonrtep/TideCluster/archive/refs/tags/{{ version }}.tar.gz
-  sha256: cbc7bef309d017d8f3beb6b086397ffb86ef621d1b5339326a3e172d1e0aebb4
+  sha256: c489c89069024c750c6bd11047f6401241e674be57452cebd25e8616e63e41e3
 requirements:
   run:
     - TideHunter=1.4.3
@@ -18,13 +18,16 @@ requirements:
     - r-optparse
     - r-igraph
     - bioconductor-biostrings
-    - bioconductor-genomeinfodb
+    - bioconductor-rtracklayer
     - r-scales
     - r-hwriter
     - r-r2html
     - r-plyr
     - r-dplyr
+    - r-jsonlite
+    - r-reshape2
     - mafft
+    - bedtools
 test:
   commands:
     - TideCluster.py --help
